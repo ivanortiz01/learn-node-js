@@ -1,0 +1,27 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#map {
+  height: 300px; 
+  width: 300px;
+  margin-top: 30px;
+}
+
+.table {
+  width: 100%;  
+}
+
+.table thead th {
+  background: #cccccc;
+  padding: 20px;
+}
+
+.table tbody th, .table tbody td {
+  padding: 20px;
+}
