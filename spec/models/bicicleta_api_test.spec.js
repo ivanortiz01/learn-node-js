@@ -5,7 +5,7 @@ var Bicicleta = require("../../models/bicicleta");
 describe("Testing Bicicletas", function() {
 
     beforeAll(function(done) {
-        var mongoDb = 'mongodb+srv://usuario1:ZgCRi9bztAWExZ4@cluster0.yjasg.azure.mongodb.net/test'
+        var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/test'
         mongoose.connect(mongoDb, {useNewUrlParser: true, socketTimeoutMS: 0, keepAlive: true, reconnectTries: 30});
         const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'MongoDB connection error:'));
