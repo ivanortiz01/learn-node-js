@@ -5,3 +5,5 @@ Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y
 # Semana 1
 
 Estructura basica proyecto nodejs con view engine, pug. 
+
+Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_1.docx)
