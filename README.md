@@ -2,6 +2,7 @@
 
 Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y MongoDB, se tendra branch por semana a presentar, las cuales se haran merge a master una vez aprobadas.
 
-# Semana 1
+# Semana 2
 
-Estructura basica proyecto nodejs con view engine, pug.
+Adición conexión mongoDB en la nube.
+Adición pruebas unitarias con jasmine.
