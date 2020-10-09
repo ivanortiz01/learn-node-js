@@ -6,3 +6,5 @@ Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y
 
 Adición conexión mongoDB en la nube.
 Adición pruebas unitarias con jasmine.
+
+Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_2.docx)
