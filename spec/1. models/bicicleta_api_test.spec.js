@@ -1,23 +1,21 @@
-var mongoose = require("mongoose");
+var connectionManager = require("../../models/connectionManager");
 var Bicicleta = require("../../models/bicicleta");
-
 
 describe("Testing Bicicletas", function() {
 
     beforeAll(function(done) {
-        var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/test'
-        mongoose.connect(mongoDb, {useNewUrlParser: true, socketTimeoutMS: 0, keepAlive: true, reconnectTries: 30});
-        const db = mongoose.connection;
-        db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-        db.once('open', function() {
-            console.log("We are connected to test database");
-            done();
-          });
+        connectionManager.connect("test");
+        done();
     });
+
+    afterAll(function(done) {
+        connectionManager.disconnect();
+        done();
+    })
 
     afterEach(function(done) {        
         Bicicleta.deleteMany({}, function(error, success) {
-            if(error) console.error("Error al finalizar" + error);            
+            if(error) console.error("Error al finalizar" + error);                        
             done();
         });
     });

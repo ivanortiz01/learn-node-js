@@ -8,13 +8,11 @@ var indexRouter = require('./routes/index');
 var bicicletasRouter = require('./routes/bicicletas');
 var bicicletasApiRouter = require('./routes/api/bicicletas');
 
+var connectionManager = require("./models/connectionManager");
+
 var app = express();
 
-const mongoose = require('mongoose');
-var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/red_bicicletas'
-mongoose.connect(mongoDb, {useNewUrlParser: true});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+connectionManager.connect("red_bicicletas");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
