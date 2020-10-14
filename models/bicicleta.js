@@ -39,7 +39,7 @@ bicicletasSchema.statics.removeByCode = function(aCode, cb) {
     return this.deleteOne({code: aCode}, cb);
 }
 
-module.exports = mongoose.model('Bicicleta', bicicletasSchema);
+module.exports = mongoose.model('bicicleta', bicicletasSchema);
 
 // var Bicicleta = function (id, color, modelo, ubicacion) {
 //     this.id = id;
