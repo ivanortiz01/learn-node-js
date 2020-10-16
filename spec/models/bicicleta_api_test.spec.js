@@ -5,7 +5,7 @@ var Bicicleta = require("../../models/bicicleta");
 describe("Testing Bicicletas", function() {
 
     beforeAll(function(done) {
-        var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/test'
+        var mongoDb = 'mongodb+srv://usuario1:****git a@cluster0.yjasg.azure.mongodb.net/test'
         mongoose.connect(mongoDb, {useNewUrlParser: true, socketTimeoutMS: 0, keepAlive: true, reconnectTries: 30});
         const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -48,9 +48,8 @@ describe("Testing Bicicletas", function() {
             var a = new Bicicleta({code: 1, color: "verde", modelo: "urbana"});
             Bicicleta.add(a, function(err, newBici) {
                 if(err) console.log(err);
-                Bicicleta.allBicis(function(err, bicis) {
-                    expect(bicis.length).toBe(1);
-                    expect(bicis[0].code).toEqual(a.code);
+                Bicicleta.findOne({code: 1}, function(err, bici) {
+                    expect(bici.code).toEqual(a.code);
                     done();
                 })
             })

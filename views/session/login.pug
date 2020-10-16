@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+
+    if message
+        div.alert.alert-danger
+            = message
+
+    form#Login(action="/login" method="post")
+        .form-group
+            input#username.form-control(type="email" placeholder="Email Address" name="username")
+        .form-group
+            input#password.form-control(type="password" placeholder="Password" name="password")
+        .forgot
+            a(href="/forgotPassword") Olvidé mi contraseña
+        
+        button.btn.btn-primary(type="submit") Ingreso
