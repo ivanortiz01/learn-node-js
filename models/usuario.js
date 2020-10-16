@@ -49,7 +49,7 @@ usuarioSchema.pre("save", function (next) {
 });
 
 usuarioSchema.methods.validPassword = function (password) {
-    return bcrypt.compareSync(password, this.password);
+    return password === this.password;
 };
 
 usuarioSchema.methods.enviarMensajeBienvenida = function (cb) {
@@ -66,6 +66,23 @@ usuarioSchema.methods.enviarMensajeBienvenida = function (cb) {
         body: `Hola, <br/> <br />
                 Por favor, verificar su cuenta haga click en este enlace: <br /><br />
                 http://localhost:3000/token/confirmation/${token.token}`
+    });    
+}
+
+usuarioSchema.methods.resetPassword = function (cb) {
+    const token = new Token({
+        _userID: this.id,
+        token: crypto.randomBytes(16).toString('hex')
+    });
+    
+    token.save();    
+
+    mailer.sendMail({
+        email: this.email,
+        subject: 'Verificación de cuenta',
+        body: `Hola, <br/> <br />
+                Por favor, actualizar su contraseña haga click en este enlace: <br /><br />
+                http://localhost:3000/resetPassword/${token.token}`
     });
 }
 
