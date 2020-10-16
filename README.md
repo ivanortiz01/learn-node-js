@@ -6,6 +6,7 @@ Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y
 
 Adición de autenticación y autorización.
 Adición mailer.
+Adición passport.
 
 Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_3.docx)
 
