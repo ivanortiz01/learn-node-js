@@ -4,6 +4,11 @@ Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y
 
 # Semana 3
 
+<<<<<<< HEAD
+Estructura basica proyecto nodejs con view engine, pug. 
+
+Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_1.docx)
+=======
 Adición de autenticación y autorización.
 Adición mailer.
 Adición passport.
@@ -14,3 +19,4 @@ Se crea documento donde se evidencia correcto funcionamiento de los cambios real
 Name:	Tyrique Dickens
 Username:	tyrique.dickens@ethereal.email (also works as a real inbound email address)
 Password:	ETSazCbH9MZd4BUWUW
+>>>>>>> master
