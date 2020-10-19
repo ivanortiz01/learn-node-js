@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -34,7 +35,9 @@ app.use(session({
 const mongoose = require('mongoose');
 const { RequestTimeout } = require('http-errors');
 const { decode } = require('punycode');
-var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/red_bicicletas'
+
+var mongoDb = process.ENV.MONGO_URI;
+
 mongoose.connect(mongoDb, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
