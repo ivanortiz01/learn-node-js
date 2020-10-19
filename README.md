@@ -2,13 +2,13 @@
 
 Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y MongoDB, se tendra branch por semana a presentar, las cuales se haran merge a master una vez aprobadas.
 
-# Semana 3
+# Semana 4
 
-Adición de autenticación y autorización.
-Adición mailer.
-Adición passport.
+Adición de publicación con keroku   
+Adición de oAuth.
+Adición de monitoreo.
 
-Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_3.docx)
+Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_4.docx)
 
 # Datos correo electronicos pruebas
 Name:	Tyrique Dickens
