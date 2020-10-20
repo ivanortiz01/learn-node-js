@@ -4,7 +4,7 @@ const sgTransport = require("nodemailer-sendgrid-transport");
 
 // Generate SMTP service account from ethereal.email
 module.exports = {
-    sendMail = async function (emailData) {
+    sendMail : async function (emailData) {
         // Generate test SMTP service account from ethereal.email
         // Only needed if you don't have a real mail account for testing
         //let testAccount = await nodemailer.createTestAccount();

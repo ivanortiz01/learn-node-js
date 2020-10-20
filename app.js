@@ -36,7 +36,7 @@ const mongoose = require('mongoose');
 const { RequestTimeout } = require('http-errors');
 const { decode } = require('punycode');
 
-var mongoDb = process.ENV.MONGO_URI;
+var mongoDb = process.env.MONGO_URI;
 
 mongoose.connect(mongoDb, { useNewUrlParser: true });
 const db = mongoose.connection;

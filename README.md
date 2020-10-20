@@ -16,7 +16,7 @@ Se requiere ejecutar comandos heroku:
 Instalar heroku cli, [aqui](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
 heroku login -- acceder cuenta heroku
 heroku git:remote -a iortiz12-red-bicicletas -- linkear remoto heroku
-git push heroku master -- publicar web
+git push heroku BRANCH_NAME:master -- publicar web
 heroku open -- acceder a web
 
 # Datos correo electronicos pruebas
