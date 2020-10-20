@@ -5,9 +5,10 @@ Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y
 # Semana 4
 
 Adición de publicación con heroku. 
-Adición manejo dotenv.
+Adición manejo dotenv para gestión de configuración.
 Adición de oAuth.
 Adición de monitoreo.
+Adición sendgrid para envio de correo.
 
 Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_4.docx)
 
