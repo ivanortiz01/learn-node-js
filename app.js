@@ -152,6 +152,9 @@ app.use('/api/mailer', mailerApiRouter);
 app.use('/api/auth', authApiRouter);
 app.use("/privacy_policy", function(req, res) {
   res.sendFile("public/privacy_policy.html");
+});
+app.use("/google941206d3004754a1", function(req, res) {
+  res.sendFile("public/google941206d3004754a1.html");
 })
 
 // catch 404 and forward to error handler
