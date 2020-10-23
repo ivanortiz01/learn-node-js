@@ -9,6 +9,7 @@ Adición manejo dotenv para gestión de configuración.
 Adición de oAuth.
 Adición de monitoreo.
 Adición sendgrid para envio de correo.
+Adición newrelic para monitoreo de aplicación.
 
 Se crea documento donde se evidencia correcto funcionamiento de los cambios realizados, [aqui](./doc/Semana_4.docx)
 
