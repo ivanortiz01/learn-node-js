@@ -1,3 +1,5 @@
+require("dotenv").config();
+require('newrelic');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const passport = require("./config/passport");
 const session = require("express-session");
+const MongoDBStore = require('connect-mongodb-session')(session);
 const jwt = require("jsonwebtoken");
 
 var Usuario = require("./models/usuario");
@@ -19,7 +22,19 @@ var bicicletasApiRouter = require('./routes/api/bicicletas');
 var mailerApiRouter = require('./routes/api/mailer');
 var authApiRouter = require('./routes/api/auth');
 
-const store = new session.MemoryStore;
+let store;
+if (process.env.NODE_ENV === 'development'){
+  store = new session.MemoryStore;
+} else {
+  store = new MongoDBStore({
+    uri: process.env.MONGO_URI,
+    collection: 'sessions'
+  });
+  store.on('error', function(error){
+    assert.ifError(error);
+    assert.ok(false);
+  });
+}
 
 var app = express();
 app.set('secretKey', 'jwt_pwd_!!223344');
@@ -34,7 +49,9 @@ app.use(session({
 const mongoose = require('mongoose');
 const { RequestTimeout } = require('http-errors');
 const { decode } = require('punycode');
-var mongoDb = 'mongodb+srv://usuario1:****@cluster0.yjasg.azure.mongodb.net/red_bicicletas'
+
+var mongoDb = process.env.MONGO_URI;
+
 mongoose.connect(mongoDb, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -147,6 +164,27 @@ app.use('/token', tokenRouter);
 app.use('/api/bicicletas', validarUSuario, bicicletasApiRouter);
 app.use('/api/mailer', mailerApiRouter);
 app.use('/api/auth', authApiRouter);
+app.use("/privacy_policy", function(req, res) {
+  res.sendFile("public/privacy_policy.html");
+});
+app.use("/google941206d3004754a1", function(req, res) {
+  res.sendFile("public/google941206d3004754a1.html");
+});
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope: [
+    'profile', 'email' ] }
+    //'https://www.googleapis.com/auth/plus.login',
+    //'https://www.googleapis.com/auth/plus.profile.emails.read'] } 
+  )
+);
+
+app.get('/auth/google/callback', 
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/error'
+  })
+);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
