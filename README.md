@@ -2,6 +2,8 @@
 
 Repositorio para tareas de curso Desarrollo del lado servidor: NodeJS, Express y MongoDB, se tendra branch por semana a presentar, las cuales se haran merge a master una vez aprobadas.
 
+[Curso](https://www.coursera.org/learn/desarrollo-lado-servidor-nodejs-express-mongodb)
+
 # Semana 4
 
 Adición de publicación con heroku. 
