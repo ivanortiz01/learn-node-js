@@ -22,7 +22,3 @@ heroku git:remote -a iortiz12-red-bicicletas -- linkear remoto heroku
 git push heroku BRANCH_NAME:master -- publicar web
 heroku open -- acceder a web
 
-# Datos correo electronicos pruebas
-Name:	Tyrique Dickens
-Username:	tyrique.dickens@ethereal.email (also works as a real inbound email address)
-Password:	ETSazCbH9MZd4BUWUW
